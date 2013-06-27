@@ -1,7 +1,7 @@
 
 // Copiously Copasetic
 
-function smallestWhileGreater(inArray, greaterThanValue) {
+var smallestWhileGreater = function(inArray, greaterThanValue) {
 	if (inArray.length) {
 		var i = 0;
 		var lowest = NaN;
@@ -20,7 +20,7 @@ function smallestWhileGreater(inArray, greaterThanValue) {
 	}
 }
 
-function fuzzyMatch(matchNumber, comparisonNumber, withinPercent) {
+var fuzzyMatch = function(matchNumber, comparisonNumber, withinPercent) {
 	var fuzzyLow = comparisonNumber - (comparisonNumber * withinPercent);
 	var fuzzyHigh = comparisonNumber * (1+withinPercent);
 
@@ -31,3 +31,24 @@ function fuzzyMatch(matchNumber, comparisonNumber, withinPercent) {
 	}
 }
 
+var isEmail = function(emailAddress) {
+	var i;
+	var sawAt = false;
+	var sawDot = true;
+
+	for (i = 0; i < emailAddress.length; i++) {
+		if (emailAddress[i] == "@") {
+			sawAt = true;
+		}
+
+		if (emailAddress[i] == "." && sawAt == true) {
+			sawDot = true;
+		}
+	}
+
+	if (sawAt == true && sawDot == true) {
+		return true;
+	} else {
+		return false;
+	}
+}
