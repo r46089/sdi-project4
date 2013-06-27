@@ -88,3 +88,25 @@ var totalAllNumbers = function(numberList) {
 	return numberTotal;
 }
 
+var isPhoneNumber = function(phoneNumber) {
+	var i;
+
+	if (phoneNumber.length != 12) { 
+		return false; 
+	}
+
+	for (i = 0; i < phoneNumber.length; i++) {
+		if (i == 3 || i == 7) {
+			if (phoneNumber[i] != "-") { 
+				return false; 
+			}
+		} else {
+			if (isNaN(phoneNumber[i])) { 
+				return false; 
+			}
+		}
+	}
+
+	return true;
+}
+
