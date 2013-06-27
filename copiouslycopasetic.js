@@ -16,7 +16,7 @@ var smallestWhileGreater = function(inArray, greaterThanValue) {
 		}
 		return lowest;
 	} else {
-		return -1;
+		return NaN;
 	}
 }
 
