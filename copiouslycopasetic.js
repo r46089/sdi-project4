@@ -52,3 +52,30 @@ var isEmail = function(emailAddress) {
 		return false;
 	}
 }
+
+var isURL = function(address) {
+	var i;
+	var maybeHTTPS;
+	var prefix;
+
+	for (i = 0; i < address.length; i++) {
+		prefix = prefix + address[i];
+
+		if (i == 4) {
+			if (address[i] != "s") {
+				break;
+			}
+		}
+
+		if (i == 5) {
+			break;
+		}
+	}
+
+	if (prefix == "http:" || prefix == "https:") {
+		return true;
+	} else {
+		return false;
+	}
+}
+
