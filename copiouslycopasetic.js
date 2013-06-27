@@ -79,3 +79,16 @@ var isURL = function(address) {
 	}
 }
 
+var totalAllNumbers = function(numberList) {
+	var i;
+	var numberTotal = 0;
+
+	for (i = 0; i < numberList.length; i++) {
+		if (!isNaN(numberList[i])) {
+			numberTotal = numberTotal + numberList[i];
+		}
+	}
+
+	return numberTotal;
+}
+
