@@ -20,3 +20,14 @@ function smallestWhileGreater(inArray, greaterThanValue) {
 	}
 }
 
+function fuzzyMatch(matchNumber, comparisonNumber, withinPercent) {
+	var fuzzyLow = comparisonNumber - (comparisonNumber * withinPercent);
+	var fuzzyHigh = comparisonNumber * (1+withinPercent);
+
+	if (matchNumber > fuzzyHigh || matchNumber < fuzzyLow) {
+		return false;
+	} else {
+		return true;
+	}
+}
+
