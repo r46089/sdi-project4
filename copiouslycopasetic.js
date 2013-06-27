@@ -30,7 +30,7 @@ var fuzzyMatch = function(matchNumber, comparisonNumber, withinPercent) {
 var isEmail = function(emailAddress) {
 	var i;
 	var sawAt = false;
-	var sawDot = true;
+	var sawDot = false;
 
 	for (i = 0; i < emailAddress.length; i++) {
 		if (emailAddress[i] == "@") {
@@ -51,8 +51,7 @@ var isEmail = function(emailAddress) {
 
 var isURL = function(address) {
 	var i;
-	var maybeHTTPS;
-	var prefix;
+	var prefix = "";
 
 	for (i = 0; i < address.length; i++) {
 		prefix = prefix + address[i];
@@ -81,7 +80,7 @@ var totalAllNumbers = function(numberList) {
 
 	for (i = 0; i < numberList.length; i++) {
 		if (!isNaN(numberList[i])) {
-			numberTotal = numberTotal + numberList[i];
+			numberTotal = numberTotal + Number(numberList[i]);
 		}
 	}
 
